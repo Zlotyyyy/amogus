@@ -1,0 +1,110 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #232323;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.cube {
+    position:relative;
+    width:300px;
+    height:300px;
+    transform-style: preserve-3d;
+    transform: rotatex(-30deg);
+    animation: rotate 3s linear infinite;
+    overflow:visible
+}
+
+@keyframes rotate {
+    0% 
+    {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(360deg) rotateY(720deg)
+    }
+}
+
+.cube div {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transform-style: preserve-3d;
+}
+
+.cube div span {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(amogus.png),linear-gradient(#343434, orangered);
+    background-size:200%;
+    background-position:center;
+    background-repeat:no-repeat;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px)
+}
+
+.top {
+    position:absolute;
+    width:300px;
+    height:300px;
+    top:10px;
+    left:0;
+    background:url(amogus.png), #343434;
+    background-size:200%;
+    background-position:center;
+    background-repeat:no-repeat;
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.top::before {
+    width:100%;
+    height:100%;
+    position:absolute;
+    transform: rotateX(0deg) translateZ(-300px);
+    background:url(amogus.png),orangered;
+    background-size:200%;
+    background-position:center;
+    background-repeat:no-repeat;
+    top:0;
+    left:0;
+    content:'';
+}
+
+.top::after {
+    width:100%;
+    height:100%;
+    position:absolute;
+    transform: rotateX(0deg) translateZ(-380px);
+    background:url(amogus.png),orangered;
+    background-size:200%;
+    background-position:center;
+    background-repeat:no-repeat;
+    top:0;
+    left:0;
+    content:'';
+    filter:blur(20px);
+    box-shadow:
+    0 0 20px rgba(255,65,0,1),
+    0 0 30px rgba(255,65,0,0.8),
+    0 0 40px rgba(255,65,0,0.6),
+    0 0 50px rgba(255,65,0,0.4),
+    0 0 60px rgba(255,65,0,0.2);
+}
+#amogus {
+    position:absolute;
+    top:0;
+    position:fixed;
+}
